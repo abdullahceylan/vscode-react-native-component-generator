@@ -3,6 +3,7 @@ import { View, Text } from {quotes}react-native{quotes};
 import PropTypes from {quotes}prop-types{quotes};
 import { connect } from {quotes}react-redux{quotes};
 import * as styles from {quotes}./{componentName}.styles{quotes};
+//import { {componentName}Wrapper } from {quotes}./{componentName}.styles{quotes};
 
 const {componentName} = (props) => (
   <View style={styles.{componentName}Wrapper}>

@@ -2,6 +2,7 @@ import React, { PureComponent } from {quotes}react{quotes};
 import { View, Text } from {quotes}react-native{quotes};
 import PropTypes from {quotes}prop-types{quotes};
 import * as styles from {quotes}./{componentName}.styles{quotes};
+//import { {componentName}Wrapper } from {quotes}./{componentName}.styles{quotes};
 
 class {componentName} extends PureComponent { 
   constructor(props) {
