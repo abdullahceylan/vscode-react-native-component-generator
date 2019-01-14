@@ -1,0 +1,180 @@
+{
+  "name": "vscode-react-native-component-generator",
+  "displayName": "VSCode React Native Component Generator",
+  "description": "Generates React Native component files automatically",
+  "version": "0.0.1",
+  "publisher": "abdullahceylan",
+  "author": {
+    "name": "Abdullah Ceylan",
+    "email": "ben@abdullahceylan.com"
+  },
+  "homepage": "https://github.com/abdullahceylan/vscode-react-native-component-generator",
+  "galleryBanner": {
+      "color": "#0273D4",
+      "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abdullahceylan/vscode-react-native-component-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abdullahceylan/vscode-react-native-component-generator/issues",
+    "email": "ben@abdullahceylan.com"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.29.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Other"
+  ],
+  "keywords": [
+    "vscode-react",
+    "react",
+    "react native component",
+    "react native generate component",
+    "redux",
+    "stateless",
+    "typescript"
+  ],
+  "activationEvents": [
+    "onCommand:extension.genReactNativeContainerComponentFiles",
+    "onCommand:extension.genReactNativeStatelessComponentFiles",
+    "onCommand:extension.genReactNativeReduxContainerComponentFiles",
+    "onCommand:extension.genReactNativeReduxStatelessComponentFiles"
+  ],
+  "main": "./out/src/extension",
+  "icon": "assets/images/icon.png",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "AC React Native Component Generator",
+      "properties": {
+        "ACReactNativeComponentGenerator.global.quotes": {
+          "type": "string",
+          "enum": [
+            "single",
+            "double"
+          ],
+          "default": "single",
+          "description": "Options: `single` or `double` Result: `'`  or  `\"`"
+        },
+        "ACReactNativeComponentGenerator.global.generateFolder": {
+          "type": "boolean",
+          "default": true,
+          "description": "Generate or not separate folder for newly created component"
+        },
+        "ACReactNativeComponentGenerator.global.lifecycleType": {
+          "type": "string",
+          "default": "legacy",
+          "enum": [
+            "legacy",
+            "reactv16"
+          ],
+          "description": "The lifecycle type of generated component. `legacy` is contains componentWillReceiveProps, componentWillMount etc."
+        },
+        "ACReactNativeComponentGenerator.mainFile.create": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to generate component's main file or not. e.g.: ComponentName.(extension)"
+        },
+        "ACReactNativeComponentGenerator.mainFile.extension": {
+          "type": "string",
+          "default": "jsx",
+          "description": "The extension of generated component file"
+        },
+        "ACReactNativeComponentGenerator.styleFile.create": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to generate component's style file or not. e.g.: ComponentName.(extension)"
+        },
+        "ACReactNativeComponentGenerator.styleFile.type": {
+          "type": "string",
+          "enum": [
+            "styled-components",
+            "standard"
+          ],
+          "default": "styled-components",
+          "description": "The type of stylesheet file to create"
+        },
+
+        "ACReactNativeComponentGenerator.styleFile.suffix": {
+          "type": "string",
+          "default": ".styles",
+          "description": "The suffix to add to the end of the stylesheet filename. Default: ComponentName.styles.(extension)"
+        },
+        "ACReactNativeComponentGenerator.indexFile.create": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to generate component's index file or not. e.g.: index.(extension)"
+        },
+        "ACReactNativeComponentGenerator.indexFile.extension": {
+          "type": "string",
+          "default": "js",
+          "description": "The extension of generated component index file"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "extension.genReactNativeContainerComponentFiles",
+        "title": "New React Native Container Component"
+      },
+      {
+        "command": "extension.genReactNativeStatelessComponentFiles",
+        "title": "New React Native Stateless Component"
+      },
+      {
+        "command": "extension.genReactNativeReduxContainerComponentFiles",
+        "title": "New React Native Container Component with Redux"
+      },
+      {
+        "command": "extension.genReactNativeReduxStatelessComponentFiles",
+        "title": "New React Native Stateless Component with Redux"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.genReactNativeContainerComponentFiles",
+          "group": "navigation"
+        },
+        {
+          "command": "extension.genReactNativeStatelessComponentFiles",
+          "group": "navigation"
+        },
+        {
+          "command": "extension.genReactNativeReduxContainerComponentFiles",
+          "group": "navigation"
+        },
+        {
+          "command": "extension.genReactNativeReduxStatelessComponentFiles",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "typescript": "^2.6.1",
+    "vscode": "^1.1.21",
+    "eslint": "^4.11.0",
+    "@types/node": "^8.10.25",
+    "@types/mocha": "^2.2.42"
+
+  },
+  "dependencies": {
+    "change-case": "^3.0.2",
+    "fs": "^0.0.1-security",
+    "fs-extra": "^0.30.0",
+    "rxjs": "^5.0.0-rc.1",
+    "lodash": "^4.17.11"
+  }
+}
