@@ -1,0 +1,7 @@
+import { StyleSheet } from {quotes}react-native{quotes};
+
+export const styles = StyleSheet.create({
+  {componentName}Wrapper: {
+    flex: 1
+  }
+});

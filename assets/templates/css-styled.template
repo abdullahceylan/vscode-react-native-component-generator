@@ -1,0 +1,5 @@
+import styled from {quotes}styled-components/native{quotes};
+
+export const {componentName}Wrapper = styled.View`
+ flex: 1
+`;

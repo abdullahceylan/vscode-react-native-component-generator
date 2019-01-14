@@ -1,0 +1,32 @@
+import React from {quotes}react{quotes};
+import { View, Text } from {quotes}react-native{quotes};
+import PropTypes from {quotes}prop-types{quotes};
+import { connect } from {quotes}react-redux{quotes};
+import * as styles from {quotes}./{componentName}.styles{quotes};
+
+const {componentName} = (props) => (
+  <View style={styles.{componentName}Wrapper}>
+    <Text>Test content</Text>
+  </View>
+);
+
+{componentName}.propTypes = {
+  // bla: PropTypes.string,
+};
+
+{componentName}.defaultProps = {
+  // bla: 'test',
+};
+
+const mapStateToProps = state => ({
+  // blabla: state.blabla,
+});
+
+const mapDispatchToProps = dispatch => ({
+  // fnBlaBla: () => dispatch(action.name()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)({componentName});
